@@ -1,0 +1,67 @@
+{
+  "name": "dsh-tavily",
+  "version": "0.1.0",
+  "description": "Tavily web search, extract, crawl and map for DeepSeek Harness - wraps the official tvly CLI as native DSH tools plus a skill, with keyless mode and volatile configuration",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "tavily",
+    "web-search",
+    "crawl",
+    "extract",
+    "agent"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manron041/dsh-tavily.git"
+  },
+  "homepage": "https://github.com/Manron041/dsh-tavily#readme",
+  "bugs": {
+    "url": "https://github.com/Manron041/dsh-tavily/issues"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.0 <0.3.0"
+  },
+  "dsh": {
+    "displayName": "Tavily Web Search",
+    "description": "Tavily search, page extraction, site crawling and URL discovery as native DSH tools, with a settings page for every option.",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.0 <0.3.0",
+    "@deepseek-ai/schemastery": "^3.18.1"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  }
+}

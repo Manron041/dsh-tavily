@@ -1,0 +1,17 @@
+# dsh-tavily bundle patch.
+#
+# Mounts the Tavily tools (search / extract / crawl / map) and the `tavily`
+# skill into whichever profile lists this bundle.
+#
+# The tools run the official `tvly` CLI on the Host, so the agent's bash
+# sandbox never needs write access to ~/.tavily.
+#
+# Install:  dsh plugin --profile web add dsh-tavily
+# Local dev: dsh plugin --profile web add link:/absolute/path/to/dsh-tavily
+#
+# Keyless mode works with NO API key for search and extract. crawl and map
+# require an API key (`tvly login` or TAVILY_API_KEY).
+
+- insert:
+    - id: tavily
+      name: 'dsh-tavily'
